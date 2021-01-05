@@ -12,4 +12,8 @@ node{
             mail bcc: '', body: 'welcome to jenkins this is rishi', cc: '', from: '', replyTo: '', subject: 'welcome to jenkins test', to: 'rishireddy.devops@gmail.com'
       }
       
+      stage('Slack Notification'){
+            slackSend baseUrl: 'https://hooks.slack.com/services/', botUser: true, channel: 'rr-consultants', color: 'good',
+                  message: 'welcome to slack', tokenCredentialId: 'slack-notification', username: 'rushendra'
+      }
 }
