@@ -12,6 +12,7 @@ node{
 	     withSonarQubeEnv('sonar-7'){
 	     sh "${mvnHome}/bin/mvn sonar:sonar"
 	    }
+      }
       stage('Slack Notification'){
             slackSend baseUrl: 'https://hooks.slack.com/services/', botUser: true, channel: 'rr-consultants', color: 'good',
                   message: 'welcome to slack', tokenCredentialId: 'slack-notification', username: 'rushendra'
